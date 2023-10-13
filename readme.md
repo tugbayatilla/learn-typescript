@@ -32,3 +32,9 @@ tsc index.ts
 # runs javascript file
 node ./dist/index.js
 ```
+## How to compile and run the code
+
+```sh
+# runs javascript file
+tsc && node ./dist/index.js
+```
