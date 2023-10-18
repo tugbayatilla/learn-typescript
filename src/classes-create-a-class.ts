@@ -1,13 +1,10 @@
 class Account{
-    readonly id: number; // these properties are not exist in javascript, only exist in Typescript
-    owner: string; // these are public properties
-    private _balance: number;
     nickname?: string // this property is created later but as optional 
     
-    constructor(id: number, owner: string, balance: number) {
-        this.id = id;
-        this.owner = owner;
-        this._balance = balance;
+    constructor(
+        public readonly id: number, 
+        public owner: string, 
+        public _balance: number) {
     }
     
     deposit(amount: number):void {
