@@ -15,3 +15,11 @@ class Account{
         this.balance += amount;
     }
 }
+
+let account = new Account(1, 'tugbay', 0);
+account.deposit(100);
+console.log(account)
+
+// Union
+console.log(typeof account) // returns object
+console.log(account instanceof Account) // returns true or false
