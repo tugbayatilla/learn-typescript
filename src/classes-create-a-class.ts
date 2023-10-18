@@ -8,37 +8,18 @@ class Account{
     }
     
     deposit(amount: number):void {
-        // this.id = 0; this should not happen. useing readonly keyword
         if(amount<0)
             throw new Error('Invalid amount');
         
-        // record transaction object
-        
-        this._balance += amount + this.calculateTax();
+        this._balance += amount;
     }
     
-    get balance(): number{ // this is an option you can make but there is a better solution
+    get balance(): number{ 
         return this._balance;
-    }
-    set balance(value: number) {
-        if(value<0)
-            throw new Error('Invalid amount');
-        this._balance = value;
-    }
-    
-    private calculateTax():number { // this is another private method 
-        return 0;
     }
 }
 
 let account = new Account(1, 'tugbay', 0);
 account.deposit(100);
-console.log(account)
-
-// Union
-console.log(typeof account) // returns object
-console.log(account instanceof Account) // returns true or false
 
 console.log(account.balance) 
-account.balance = 1;
-console.log(account.balance) // this is not a good idea to give balance a setter.
