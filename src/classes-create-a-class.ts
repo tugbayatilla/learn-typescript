@@ -20,6 +20,11 @@ class Account{
     get balance(): number{ // this is an option you can make but there is a better solution
         return this._balance;
     }
+    set balance(value: number) {
+        if(value<0)
+            throw new Error('Invalid amount');
+        this._balance = value;
+    }
     
     private calculateTax():number { // this is another private method 
         return 0;
@@ -34,4 +39,6 @@ console.log(account)
 console.log(typeof account) // returns object
 console.log(account instanceof Account) // returns true or false
 
-console.log(account.balance) // there is better solution than this one.
+console.log(account.balance) 
+account.balance = 1;
+console.log(account.balance) // this is not a good idea to give balance a setter.
