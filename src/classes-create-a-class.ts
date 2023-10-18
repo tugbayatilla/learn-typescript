@@ -17,7 +17,7 @@ class Account{
         this._balance += amount + this.calculateTax();
     }
     
-    getBalance(): number{ // this is an option you can make but there is a better solution
+    get balance(): number{ // this is an option you can make but there is a better solution
         return this._balance;
     }
     
@@ -34,4 +34,4 @@ console.log(account)
 console.log(typeof account) // returns object
 console.log(account instanceof Account) // returns true or false
 
-console.log(account.getBalance()) // there is better solution than this one.
+console.log(account.balance) // there is better solution than this one.
