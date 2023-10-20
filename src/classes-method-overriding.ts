@@ -1,11 +1,6 @@
-class Person2 {
-    constructor(public firstName: string, public lastName: string) {
-    }
-    get fullName(): string {
-        return this.firstName + ' ' + this.lastName;
-    };
-}
-class Teacher extends Person2 {
+import {Person} from "./classes";
+
+class Teacher extends Person {
     // to enable reminder of 'override' keyword, we need to enable in tsconfig 'noImplicitOverride:true'
     // if you do not use override, this setting will warn you.
     override get fullName(): string { 
