@@ -1,19 +1,17 @@
 // protected methods will create coupling, be aware!
 
-class Person4 {
-    constructor(public firstName: string, public lastName: string) {
-    }
+class ProtectedPerson {
+    constructor(public firstName: string,  public lastName: string) { }
     protected walk(): void {
         console.log('walking');
         this.someActions();
     };
-
     protected someActions(): void {
         console.log('some actions');
     };
 }
 
-class Student4 extends Person4 {
+class ProtectedStudent extends ProtectedPerson {
    constructor(public studentId: number, firstName: string, lastName: string) {
         super(firstName, lastName);
     }
@@ -24,8 +22,8 @@ class Student4 extends Person4 {
 }
 
 
-let student4 = new Student4(1, 'john', 'doe');
-student4.takeTest();
+let protectedStudent = new ProtectedStudent(1, 'john', 'doe');
+protectedStudent.takeTest();
 //walking
 //some actions
 //taking test
