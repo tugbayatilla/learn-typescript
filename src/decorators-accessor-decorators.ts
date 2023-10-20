@@ -1,3 +1,5 @@
+import {Person} from "./classes";
+
 // @ts-ignore: ignore unused parameters
 function Capitalize(target: any, methodName: string, descriptor: PropertyDescriptor){
     const original = descriptor.get; // we cannot use value property because it only works with methods
@@ -11,14 +13,11 @@ function Capitalize(target: any, methodName: string, descriptor: PropertyDescrip
 }
 
 
-class Person8 {
-    constructor(public firstName: string, public lastName: string) {
-    }
-    
+class CapitalizedPerson extends Person{
     @Capitalize
-    get fullName(): string {
+    override get fullName(): string {
         return `${this.firstName} ${this.lastName}`
     }
 }
-let person8 = new Person8('tugbay', 'atilla');
+let person8 = new CapitalizedPerson('tugbay', 'atilla');
 console.log(person8.fullName) // TUGBAY ATILLA
