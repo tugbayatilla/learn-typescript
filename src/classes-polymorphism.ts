@@ -1,17 +1,9 @@
 // many forms
 // allow us to apply Open-Close Principle
-class Person3 {
-    constructor(public firstName: string, public lastName: string) {
-    }
-    get fullName(): string {
-        return this.firstName + ' ' + this.lastName;
-    };
-    walk(): void {
-        console.log('walking');
-    };
-}
 
-class Student3 extends Person3 {
+import {Person} from "./classes";
+
+class Student3 extends Person {
     // we are not using public access modifier here for firstName and lastName
     // because in super class, the properties are already created with using 'public' access modifier
     constructor(public studentId: number, firstName: string, lastName: string) {
@@ -22,13 +14,13 @@ class Student3 extends Person3 {
     }
 }
 
-class Teacher3 extends Person3 {
+class Teacher3 extends Person {
     override get fullName(): string { 
         return 'Professor '  + super.fullName
     };
 }
 
-class Principal extends Person3 {
+class Principal extends Person {
     override get fullName(): string {
         return 'Principal '  + super.fullName
     };
@@ -41,7 +33,7 @@ printNames([
 
 ])
 
-function printNames(people: Person3[]){
+function printNames(people: Person[]){
     for(let person of people){
         console.log(person.fullName)
     }
