@@ -41,7 +41,7 @@ printNames([
 
 ])
 
-function printNames(people: Person[]){
+function printNames(people: Person3[]){
     for(let person of people){
         console.log(person.fullName)
     }
