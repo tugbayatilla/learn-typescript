@@ -1,5 +1,7 @@
 // signature for method decorator
 
+import {Person} from "./classes";
+
 // @ts-ignore: unused parameters suppressed
 function Log(target: any, methodName: string, descriptor: PropertyDescriptor){
     const original = descriptor.value as Function;
@@ -19,12 +21,12 @@ function Log(target: any, methodName: string, descriptor: PropertyDescriptor){
     
 }
 
-class Person7 {
+class LogPerson extends Person{
     @Log
     say(message: string){
         console.log('Person says ' + message);
     }
 }
 
-let person7 = new Person7();
+let person7 = new LogPerson('tugbay','atilla');
 person7.say('hello world');
